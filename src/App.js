@@ -1,23 +1,73 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import VideoSummaryPage from './components/VideoSummaryPage';
 import './App.css';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+  
+  const cards = [
+    {
+      icon: "📹",
+      title: "Vid to Text Summary",
+      description: "Summarize text instantly and accurately with our easy-to-use text summarizer.",
+      page: 'video'
+    },
+    {
+      icon: "🖼️",
+      title: "Img to Text Summary",
+      description: "Extract and summarize text from images in seconds with our efficient image-to-text summarizer.",
+      page: 'image'
+    },
+    {
+      icon: "🎵",
+      title: "Audio to Text Summary",
+      description: "Convert audio to text and summarize it instantly with ease and precision.",
+      page: 'audio'
+    },
+    {
+      icon: "📄",
+      title: "Text to Text Summary",
+      description: "Summarize lengthy texts into concise and clear insights effortlessly.",
+      page: 'text'
+    },
+  ];
+
+  const handleCardClick = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="navbar">
+        <h1 onClick={() => setCurrentPage('home')} className="logo">SummerEase</h1>
+        <nav>
+          <ul className="nav-links">
+            {cards.map((card, index) => (
+              <li key={index} onClick={() => handleCardClick(card.page)}>
+                {card.title}
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+
+      {currentPage === 'home' ? (
+        <main className="card-container">
+          {cards.map((card, index) => (
+            <div 
+              key={index} 
+              className="card"
+              onClick={() => handleCardClick(card.page)}
+            >
+              <span className="icon">{card.icon}</span>
+              <h2>{card.title}</h2>
+              <p>{card.description}</p>
+            </div>
+          ))}
+        </main>
+      ) : currentPage === 'video' && (
+        <VideoSummaryPage />
+      )}
     </div>
   );
 }

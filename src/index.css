@@ -1,13 +1,52 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.video-summary-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.summary-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.summary-description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.upload-area {
+  border: 2px dashed #1b4d89;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+}
+
+.upload-icon {
+  color: #1b4d89;
+  margin: 0 auto 20px;
+}
+
+.select-button {
+  display: inline-block;
+  background: #1b4d89;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.selected-file {
+  margin-top: 20px;
+  color: #666;
 }
