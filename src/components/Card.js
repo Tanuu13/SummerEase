@@ -2,9 +2,9 @@ import React from "react";
 import "./Card.css";
 
 // Main Card Component
-const Card = ({ icon, title, description }) => {
+const Card = ({ icon, title, description, className }) => {
   return (
-    <div className="card">
+    <div className={`card ${className}`}>
       <span className="icon">{icon}</span>
       <h2>{title}</h2>
       <p>{description}</p>
@@ -13,18 +13,18 @@ const Card = ({ icon, title, description }) => {
 };
 
 // CardHeader Component
-const CardHeader = ({ children }) => {
-  return <div className="card-header">{children}</div>;
+const CardHeader = ({ children, className }) => {
+  return <div className={`card-header ${className}`}>{children}</div>;
 };
 
 // CardTitle Component
-const CardTitle = ({ children }) => {
-  return <h2 className="card-title">{children}</h2>;
+const CardTitle = ({ children, className }) => {
+  return <h2 className={`card-title ${className}`}>{children}</h2>;
 };
 
 // CardContent Component
-const CardContent = ({ children }) => {
-  return <div className="card-content">{children}</div>;
+const CardContent = ({ children, className }) => {
+  return <div className={`card-content ${className}`}>{children}</div>;
 };
 
 // Export all components

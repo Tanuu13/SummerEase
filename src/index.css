@@ -1,17 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 .video-summary-container {
   max-width: 800px;
+  max-height: 900px;
   margin: 40px auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center;    /* Centers content horizontally */
 }
 
 .summary-card {
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 20px;
+  visibility: visible;
+}
+
+.summary-title {
+  color: #1B4D89;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .summary-description {
@@ -21,20 +33,20 @@
 }
 
 .upload-area {
-  border: 2px dashed #1b4d89;
+  border: 2px dashed #1B4D89;
   border-radius: 10px;
   padding: 40px;
   text-align: center;
 }
 
 .upload-icon {
-  color: #1b4d89;
   margin: 0 auto 20px;
+  color: #1B4D89;
 }
 
 .select-button {
   display: inline-block;
-  background: #1b4d89;
+  background: #1B4D89;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;

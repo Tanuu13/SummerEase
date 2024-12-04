@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Upload } from 'lucide-react';
 
-const VideoSummaryPage = () => {
+const ImgToTextSummaryPage = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileSelect = (event) => {
@@ -11,21 +11,21 @@ const VideoSummaryPage = () => {
   return (
     <div className="video-summary-container">
       <div className="summary-card">
-        <h2 className="summary-title">Vid to Text Summary</h2>
+        <h2 className="summary-title">Img to Text Summary</h2>
         <p className="summary-description">
-          Summarize text instantly and accurately with our easy-to-use text summarizer.
+          Extract and summarize text from images in seconds with our efficient image-to-text summarizer.
         </p>
 
         <div className="upload-area">
           <Upload className="upload-icon" size={48} />
-          <p>Drop your video file here or</p>
+          <p>Drop your image file here or</p>
 
           <label className="select-button">
-            SELECT VIDEO
+            SELECT IMAGE
             <input
               type="file"
               className="hidden-input"
-              accept="video/*"
+              accept="image/*"
               onChange={handleFileSelect}
             />
           </label>
@@ -41,4 +41,4 @@ const VideoSummaryPage = () => {
   );
 };
 
-export default VideoSummaryPage;
+export default ImgToTextSummaryPage;

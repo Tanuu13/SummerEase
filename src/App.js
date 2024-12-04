@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import VideoSummaryPage from './components/VideoSummaryPage';
+import ImgToTextSummaryPage from './components/ImgToTextSummaryPage';  // Import Img to Text Summary Page
+import AudioToTextSummaryPage from './components/AudioToTextSummaryPage';  // Import Audio to Text Summary Page
+import TextToTextSummaryPage from './components/TextToTextSummaryPage';  // Import Text to Text Summary Page
 import './App.css';
 
 function App() {
@@ -65,9 +68,15 @@ function App() {
             </div>
           ))}
         </main>
-      ) : currentPage === 'video' && (
+      ) : currentPage === 'video' ? (
         <VideoSummaryPage />
-      )}
+      ) : currentPage === 'image' ? (
+        <ImgToTextSummaryPage />
+      ) : currentPage === 'audio' ? (
+        <AudioToTextSummaryPage />
+      ) : currentPage === 'text' ? (
+        <TextToTextSummaryPage />
+      ) : null}
     </div>
   );
 }
