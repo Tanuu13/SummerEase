@@ -8,6 +8,10 @@ const VideoSummaryPage = () => {
     setSelectedFile(event.target.files[0]);
   };
 
+  const handleSummarize = () => {
+    // Logic for summarizing the video
+  };
+
   return (
     <div className="video-summary-container">
       <div className="summary-card">
@@ -36,6 +40,15 @@ const VideoSummaryPage = () => {
             </div>
           )}
         </div>
+        
+        {/* Center the SUMMARIZE button */}
+        {selectedFile && (
+          <div className="summarize-button-container">
+            <button className="select-button" onClick={handleSummarize}>
+              SUMMARIZE
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

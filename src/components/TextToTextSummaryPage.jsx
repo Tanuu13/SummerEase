@@ -30,15 +30,23 @@ const TextToTextSummaryPage = () => {
             cols="50"
             style={{ width: '100%', padding: '10px' }}
           />
-          <button className="select-button" onClick={handleSummarize}>Summarize</button>
-
-          {summary && (
-            <div className="selected-file">
-              <h3>Summary:</h3>
-              <p>{summary}</p>
-            </div>
-          )}
         </div>
+        
+        {/* Center the SUMMARIZE button */}
+        {text && (
+          <div className="summarize-button-container">
+            <button className="select-button" onClick={handleSummarize}>
+              SUMMARIZE
+            </button>
+          </div>
+        )}
+        
+        {summary && (
+          <div className="selected-file">
+            <h3>Summary:</h3>
+            <p>{summary}</p>
+          </div>
+        )}
       </div>
     </div>
   );

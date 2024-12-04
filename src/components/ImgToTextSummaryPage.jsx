@@ -8,6 +8,11 @@ const ImgToTextSummaryPage = () => {
     setSelectedFile(event.target.files[0]);
   };
 
+  const handleSummarize = () => {
+    // Summarize logic goes here (currently a placeholder)
+    alert("Summarizing image...");
+  };
+
   return (
     <div className="video-summary-container">
       <div className="summary-card">
@@ -36,6 +41,15 @@ const ImgToTextSummaryPage = () => {
             </div>
           )}
         </div>
+
+        {/* Move the Summarize button outside the box and center it at the bottom */}
+        {selectedFile && (
+          <div className="summarize-button-container">
+            <button className="select-button" onClick={handleSummarize}>
+              SUMMARIZE
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

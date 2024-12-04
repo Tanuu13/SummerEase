@@ -44,14 +44,32 @@
   color: #1B4D89;
 }
 
+/* Apply Times New Roman font to the button and increase font size */
 .select-button {
   display: inline-block;
-  background: #1B4D89;
+  background: #1b4d89;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 24px; /* Slightly larger padding */
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 20px;
+  text-transform: uppercase; /* Ensures caps lock */
+  border: none; /* Removes border */
+  font-family: 'Times New Roman', Times, serif; /* Set font to Times New Roman */
+  font-weight: bold; /* Optional: To make text bold */
+  font-size: 18px; /* Increase font size */
+}
+.summarize-button-container {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  margin-top: 20px; /* Space between the file selection and Summarize button */
+}
+.select-button:hover {
+  background-color: #155a8a; /* Optional: darken the color when hovered */
+}
+
+/* Apply Times New Roman font to the text inside the summary card */
+.summary-card, .summary-title, .summary-description, .selected-file p {
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .hidden-input {

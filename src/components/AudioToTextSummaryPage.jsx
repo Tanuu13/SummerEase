@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Upload } from 'lucide-react';
 
-const AudioToTextSummaryPage = () => {
+const AudioSummaryPage = () => {
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileSelect = (event) => {
     setSelectedFile(event.target.files[0]);
+  };
+
+  const handleSummarize = () => {
+    // Logic for summarizing the audio
   };
 
   return (
@@ -36,9 +40,18 @@ const AudioToTextSummaryPage = () => {
             </div>
           )}
         </div>
+        
+        {/* Center the SUMMARIZE button */}
+        {selectedFile && (
+          <div className="summarize-button-container">
+            <button className="select-button" onClick={handleSummarize}>
+              SUMMARIZE
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default AudioToTextSummaryPage;
+export default AudioSummaryPage;
